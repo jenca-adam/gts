@@ -1,0 +1,36 @@
+{% extends "diskusia/base.html" %}
+{% block title %}
+GTS-Forum
+{% endblock %}
+{% block body %}
+<h1>PRÍSPEVKY</h1>
+<form action="/" method="POST" align=center>
+{% csrf_token %}
+{{form.as_p}}
+<p>
+<input type="submit" value="Odoslať"  align=center id=tlacitko />
+</p>
+</form>
+<table id="prispevky" align=center>
+{% for prispevok in prispevky %}
+<tr>
+<td>
+<em>
+{{prispevok.uzivatel.username}}
+</em>
+</td>
+<td>
+<em>
+{{prispevok.vznikol}}
+</em>
+</td>
+<td>
+<em>
+{{prispevok.obsah}}
+</em>
+</td>
+</tr>
+{% endfor %}
+</table>
+<footer align=center>Copyright © Adam Jenča, Gejza Jenča--2020</footer>
+{% endblock %}

@@ -1,0 +1,36 @@
+body {
+	background-image:url('bg.jpg ');
+	font-family:cursive;
+	font-weight:900;
+}
+h1{
+	background-color:yellow;
+	text-align:center;
+	color:red;	
+}
+table#prispevky {
+
+	background-color:black;
+	color:yellow;
+	align-text:center;
+	width:50em;
+}
+
+table#prispevky td {
+	border: 1px solid #999;
+	padding: 0.1em 1em;
+}
+label{
+	background-color:yellow;
+}
+input{
+	align:center;
+}
+input#tlacitko {
+	font-family:Times;
+	background-color:black;
+	color:yellow;
+}
+footer{
+	color:yellow;
+}
