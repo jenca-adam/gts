@@ -1,0 +1,14 @@
+{% extends 'diskusia/base.html' %}
+<head>
+{% block title %}GTS:Login{% endblock %}
+<link rel=icon type=image/ico href=../../pics/favicon.ico></link>
+</head>
+{% block body %}
+  <h1>Login</h1>
+  <form method="post" align=center>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Login</button>
+  </form>
+{% endblock %}
+

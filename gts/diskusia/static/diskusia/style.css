@@ -34,3 +34,10 @@ input#tlacitko {
 footer{
 	color:yellow;
 }
+div#top{
+	color:green;
+}
+div#top a{
+	color:red;
+}
+

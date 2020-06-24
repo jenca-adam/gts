@@ -3,8 +3,11 @@
 GTS-Forum
 {% endblock %}
 {% block body %}
+<div id="top">
+Prihlásený užívateľ: {{request.user.username}} <a href="/logout">Odhlásiť</a>
+</div>
 <h1>PRÍSPEVKY</h1>
-<form action="/" method="POST" align=center>
+<form action="/diskusia" method="POST" align=center>
 {% csrf_token %}
 {{form.as_p}}
 <p>
