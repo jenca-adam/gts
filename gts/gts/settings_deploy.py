@@ -25,7 +25,7 @@ SECRET_KEY = '3b^jjzq42xa93r6r4*ms+1v0p5ytq+@6ju*x72w#m7qp5@1t+-'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['www.gtsforum.xyz']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -76,8 +76,14 @@ WSGI_APPLICATION = 'gts.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'OPTIONS': {
+           'read_default_file': '/path/to/my.cnf',
+        },
+
+        'NAME': 'gts_db',
+        'USER': 'gts',
+        'PASSWORD': 'Ceresna1679',
     }
 }
 
@@ -106,7 +112,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Bratislava'
 
 USE_I18N = True
 
@@ -119,6 +125,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = '/var/gtsforum.xyz/static/'
 
 LOGIN_REDIRECT_URL = '/diskusia'
 LOGIN_URL= '/'

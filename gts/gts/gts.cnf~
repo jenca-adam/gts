@@ -1,0 +1,5 @@
+[client]
+database = gts_db
+user = gts
+password = Ceresna2359 
+default-character-set = utf8

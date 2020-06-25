@@ -2,7 +2,7 @@
 # vim: et ts=4 sw=4 ai
 
 
-CODEDIR=/data/www/gts
+CODEDIR=/var/lib/gtsforum.xyz
 STATICDIR=/var/gtsforum.xyz/static
 
 rm -r "$CODEDIR" 
