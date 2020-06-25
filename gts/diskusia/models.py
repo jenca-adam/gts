@@ -8,3 +8,6 @@ class Prispevok(models.Model):
     obsah = models.CharField(max_length=500)
     uzivatel = models.ForeignKey(User,on_delete=models.CASCADE,related_name='prispevky')
     vznikol = models.DateTimeField(auto_now_add=True)
+    
+    def __str__(self):
+        return '{meno}: {obsah}'.format(meno=self.uzivatel.username,obsah=self.obsah[:min(len(self.obsah),20)])
