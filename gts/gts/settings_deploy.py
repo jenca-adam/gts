@@ -78,12 +78,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'OPTIONS': {
-           'read_default_file': '/path/to/my.cnf',
+           'read_default_file': '/etc/gtsforum.xyz/gts.cnf',
         },
-
-        'NAME': 'gts_db',
-        'USER': 'gts',
-        'PASSWORD': 'Ceresna1679',
     }
 }
 
