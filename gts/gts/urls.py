@@ -23,4 +23,5 @@ urlpatterns = [
     url(r'^diskusia$',views.index,name='diskusia'),
     url(r'^$',auth_views.login,{'template_name':'diskusia/login.html'},name='login'),
     url(r'^logout$',auth_views.logout_then_login),
+    url(r'^diskusia/(\d+)$',views.index,name='diskusia_page')
 ]

@@ -35,5 +35,17 @@ Prihlásený užívateľ: {{request.user.username}} <a href="/logout">Odhlásiť
 </tr>
 {% endfor %}
 </table>
-<footer align=center>Copyright © Adam Jenča, Gejza Jenča--2020</footer>
+
+<footer align=center>
+{%if curpage != lastpage%}
+        <a href="/diskusia/{{lastpage}}">Posledná strana</a>
+	<a href="/diskusia/{{nextpage}}">Ďaľšia strana</a>
+{%endif%}
+{%if curpage != firstpage%}
+	<a href="/diskusia/{{prevpage}}">Predošlá strana</a>
+	<a href=/diskusia/{{firstpage}}>Prvá strana</a>
+
+{%endif%}
+
+<br>Copyright © Adam Jenča, Gejza Jenča--2020</footer>
 {% endblock %}

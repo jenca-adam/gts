@@ -25,7 +25,7 @@ SECRET_KEY = '3b^jjzq42xa93r6r4*ms+1v0p5ytq+@6ju*x72w#m7qp5@1t+-'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['www.gtsforum.xyz']
+ALLOWED_HOSTS = []
 
 
 # Application definition

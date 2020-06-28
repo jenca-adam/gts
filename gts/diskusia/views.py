@@ -21,10 +21,21 @@ def index(request,page='1'):
             return HttpResponseRedirect('/diskusia')
     else:
         form=PrispevokForm()
-    paginator=Paginator(10,Prispevok.objects.all())
+      
+    paginator=Paginator(Prispevok.objects.all().order_by('-vznikol'),10)
+    pageint=int(page)
+    pagenormalized=min(max(pageint,1),paginator.num_pages)
     template=loader.get_template('diskusia/prispevky.html')
+    if pageint != pagenormalized:
+        return HttpResponseRedirect('/diskusia/{}'.format(pagenormalized))
     context={
-        'prispevky':paginator,
+        'prispevky':paginator.page(pageint).object_list,
+
         'form':form,
+        'nextpage':pageint+1,
+        'prevpage':pageint-1,
+        'firstpage':1,
+        'lastpage':paginator.num_pages,
+        'curpage':page
     }
     return HttpResponse(template.render(context,request))
